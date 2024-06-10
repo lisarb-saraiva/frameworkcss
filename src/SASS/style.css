@@ -1,0 +1,159 @@
+body {
+  font-family: Arial, sans-serif;
+  color: #b9babb;
+  background-color: #f2f2f3;
+}
+
+.carousel-section {
+  padding: 3rem 0;
+}
+.carousel-section .carousel {
+  position: relative;
+}
+.carousel-section .carousel .carousel-item {
+  display: none;
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+}
+.carousel-section .carousel .carousel-item.active {
+  display: block;
+}
+.carousel-section .carousel .carousel-item .carousel-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #f55686;
+}
+.carousel-section .carousel .carousel-item .carousel-content h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.carousel-section .carousel .carousel-item .carousel-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+.carousel-section .carousel .carousel-item .carousel-content .btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #f55686;
+  background-color: transparent;
+  border: 2px solid #f55686;
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+}
+.carousel-section .carousel .carousel-item .carousel-content .btn:hover {
+  background-color: #f2f2f2;
+  color: #b9babb;
+}
+.carousel-section .carousel-indicators {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.carousel-section .carousel-indicators li {
+  width: 12px;
+  height: 12px;
+  margin: 0 0.5rem;
+  background-color: rgba(245, 86, 134, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.carousel-section .carousel-indicators li.active {
+  background-color: #f55686;
+}
+.carousel-section .carousel-controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+.carousel-section .carousel-controls .carousel-control {
+  font-size: 2rem;
+  color: #f55686;
+  cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #100f0f;
+}
+
+a {
+  color: #ff051b;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #f2f2f3;
+  background-color: #ff051b;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn--secondary {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #f2f2f3;
+  background-color: #100f0f;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+.btn--secondary:hover {
+  opacity: 0.8;
+}
+
+.card {
+  background-color: #f2f2f3;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.5rem;
+}
+.row > * {
+  flex: 1 0 auto;
+  padding: 0.5rem;
+}/*# sourceMappingURL=style.css.map */

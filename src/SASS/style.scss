@@ -1,0 +1,218 @@
+// Variables
+$primary-color: #ff051b;
+$secondary-color: #100f0f;
+$terceary-color: #1b15b8;
+$text-color: #b9babb;
+$background-color: #f2f2f3;
+$button-color: #f55686;
+$button-hover-color: #f2f2f2;
+
+$breakpoints: (
+  'small': 576px,
+  'medium': 768px,
+  'large': 992px,
+  'xlarge': 1200px
+);
+
+// Mixins
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint '#{$breakpoint}' does not exist.";
+  }
+}
+
+@mixin button($color, $background-color) {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: $color;
+  background-color: $background-color;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+@mixin body($primary-color) {
+    background-color: $primary-color;
+}
+
+// Base styles
+body {
+  font-family: Arial, sans-serif;
+  color: $text-color;
+  background-color: $background-color;
+}
+
+// Carousel Section
+.carousel-section {
+    padding: 3rem 0;
+  
+    .carousel {
+      position: relative;
+  
+      .carousel-item {
+        display: none;
+        width: 100%;
+        height: 400px;
+        background-size: cover;
+        background-position: center;
+  
+        &.active {
+          display: block;
+        }
+  
+        .carousel-content {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          color: $button-color;
+  
+          h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+          }
+  
+          p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+          }
+  
+          .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: $button-color;
+            background-color: transparent;
+            border: 2px solid $button-color;
+            border-radius: 0.25rem;
+            transition: all 0.3s ease;
+  
+            &:hover {
+              background-color: $button-hover-color;
+              color: $text-color;
+            }
+          }
+        }
+      }
+    }
+  
+    .carousel-indicators {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  
+      li {
+        width: 12px;
+        height: 12px;
+        margin: 0 0.5rem;
+        background-color: rgba($button-color, 0.5);
+        border-radius: 50%;
+        cursor: pointer;
+  
+        &.active {
+          background-color: $button-color;
+        }
+      }
+    }
+  
+    .carousel-controls {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 1rem;
+  
+      .carousel-control {
+        font-size: 2rem;
+        color: $button-color;
+        cursor: pointer;
+      }
+    }
+  }
+
+h1, h2, h3, h4, h5, h6 {
+  color: $secondary-color;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Components
+.btn {
+  @include button($background-color, $primary-color);
+}
+
+.btn--secondary {
+  @include button($background-color, $secondary-color);
+}
+
+.card {
+  background-color: $background-color;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+// Layout
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.5rem;
+
+  > * {
+    flex: 1 0 auto;
+    padding: 0.5rem;
+  }
+}
+
+// Responsive design
+@include respond-to('small') {
+  // Small screen styles
+}
+
+@include respond-to('medium') {
+  // Medium screen styles
+}
+
+@include respond-to('large') {
+  // Large screen styles
+}
+
+@include respond-to('xlarge') {
+  // Extra-large screen styles
+}
